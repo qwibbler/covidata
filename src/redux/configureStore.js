@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import homeReducer from '../pages/home';
+import homeReducer from './home/home';
 
 const reducer = combineReducers({
-  home: homeReducer
+  home: homeReducer,
 });
 
 const store = createStore(
