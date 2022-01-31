@@ -8,15 +8,18 @@ const Home = () => {
       <div className="world">
         <p>
           total:
+          <br />
           confirmed:
           {' '}
-          {data.today_confirmed}
+          {data.today_confirmed.toLocaleString()}
+          <br />
           deaths:
           {' '}
-          {data.today_deaths}
+          {data.today_deaths.toLocaleString()}
+          <br />
           new:
           {' '}
-          {data.today_new_confirmed}
+          {data.today_new_confirmed.toLocaleString()}
         </p>
       </div>
     </section>
