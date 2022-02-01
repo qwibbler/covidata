@@ -1,14 +1,46 @@
-/* eslint dot-notation: 0 */ //
+/* eslint dot-notation: 0 */
 import { DateTime } from 'luxon';
 
 export const ERROR = 'api/ERROR';
 export const LOAD_DATA = 'api/data/LOAD';
 export const FETCHED_DATA = 'api/data/FETCHED';
 export const FETCHED_COUNTRIES = 'api/countries/FETCHED';
+export const FETCHED_POP = 'api/pop/FETCHED';
 
 export const covidUrl = 'https://api.covid19tracking.narrativa.com/api/';
 export const countriesUrl = 'https://api.teleport.org/api/continents/';
+export const popUrl = 'https://api.teleport.org/api/countries/iso_alpha2:';
 export const now = DateTime.now().toFormat('yyyy-MM-dd');
+export const continentsList = [
+  {
+    code: 'AF',
+    name: 'Africa',
+  },
+  {
+    code: 'AN',
+    name: 'Antarctica',
+  },
+  {
+    code: 'AS',
+    name: 'Asia',
+  },
+  {
+    code: 'EU',
+    name: 'Europe',
+  },
+  {
+    code: 'NA',
+    name: 'North America',
+  },
+  {
+    code: 'OC',
+    name: 'Oceania',
+  },
+  {
+    code: 'SA',
+    name: 'South America',
+  },
+];
 
 const myHeaders = new Headers();
 const requestOptions = {
@@ -25,45 +57,22 @@ export const fetchData = (date = now) => (dispatch) => {
     .catch((error) => dispatch({ type: ERROR, error }));
 };
 
-export const fetchCountries = (href, continent) => (dispatch) => fetch(`${href}countries/`, requestOptions)
+export const fetchCountries = (href) => (dispatch) => fetch(`${href}countries/`, requestOptions)
   .then((response) => response.json())
-  .then((data) => dispatch({ type: FETCHED_COUNTRIES, data, continent }))
+  .then((data) => dispatch({ type: FETCHED_COUNTRIES, data }))
+  .catch((error) => dispatch({ type: ERROR, error }));
+
+export const fetchPopulation = (code) => (dispatch) => fetch(`${popUrl + code}/`, requestOptions)
+  .then((response) => response.json())
+  .then((data) => dispatch({ type: FETCHED_POP, data }))
   .catch((error) => dispatch({ type: ERROR, error }));
 
 const initialState = {
   data: {},
+  total: {},
   date: '',
-  continents: [
-    {
-      code: 'AF',
-      name: 'Africa',
-    },
-    {
-      code: 'AN',
-      name: 'Antarctica',
-    },
-    {
-      code: 'AS',
-      name: 'Asia',
-    },
-    {
-      code: 'EU',
-      name: 'Europe',
-    },
-    {
-      code: 'NA',
-      name: 'North America',
-    },
-    {
-      code: 'OC',
-      name: 'Oceania',
-    },
-    {
-      code: 'SA',
-      name: 'South America',
-    },
-  ],
   countries: [],
+  population: 0,
   loading: false,
   error: '',
 };
@@ -71,26 +80,27 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHED_DATA: {
+      console.log('TOTAL!', action.data.total);
+      console.log('TOTAL!', state.total);
       return {
         ...state,
-        data: action.data,
         date: action.date,
+        data: action.data.dates[action.date].countries,
+        total: action.data.total,
         loading: false,
       };
     }
     case FETCHED_COUNTRIES: {
-      // const {continent} = action;
-      // const countries = {};
-      // countries[continent] = action.data['_links']['country:items'].map(
-      //   (country) => country.name,
-      // );
-      const countries = action.data['_links']['country:items'].map(
-        (country) => country.name,
-      );
       return {
         ...state,
-        countries: [...countries],
+        countries: [...action.data['_links']['country:items']],
         loading: false,
+      };
+    }
+    case FETCHED_POP: {
+      return {
+        ...state,
+        population: action.data.population,
       };
     }
     case LOAD_DATA: {

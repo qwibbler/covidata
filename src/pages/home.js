@@ -1,34 +1,34 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { continentsList } from '../redux/home/home';
 
 const Home = () => {
-  const data = useSelector((state) => state.home.data.total);
-  const continents = useSelector((state) => state.home.continents);
-
+  const total = useSelector((state) => state.home.total);
+  console.log(`total: ${total}`);
   return (
     <section className="home">
       <div className="world">
-        {data && (
+        {/* {total && (
           <p>
             total:
             <br />
             confirmed:
             {' '}
-            {data.today_confirmed.toLocaleString()}
+            {total.today_confirmed.toLocaleString()}
             <br />
             deaths:
             {' '}
-            {data.today_deaths.toLocaleString()}
+            {total.today_deaths.toLocaleString()}
             <br />
             new:
             {' '}
-            {data.today_new_confirmed.toLocaleString()}
+            {total.today_new_confirmed.toLocaleString()}
           </p>
-        )}
+        )} */}
       </div>
       <div className="continents">
-        {continents.map((continent) => (
+        {continentsList.map((continent) => (
           <>
             <Link
               key={continent.name}

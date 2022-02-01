@@ -28,7 +28,7 @@ function App() {
           />
           <Route
             exact
-            path="/continent/:continent/:code/:country"
+            path="/continent/:continent/:code/:country/:countryCode"
             element={<Details />}
           />
         </Routes>
