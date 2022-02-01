@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchCountries } from '../redux/home/home';
 
 const Home = () => {
@@ -46,6 +47,7 @@ const Home = () => {
           </button>
         ))}
       </div>
+      <Link to="/continent">Deets</Link>
     </section>
   );
 };

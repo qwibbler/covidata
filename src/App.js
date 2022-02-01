@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { React, useEffect } from 'react';
 import { fetchData, fetchContinents } from './redux/home/home';
 import Home from './pages/home';
+import Details from './pages/details';
 import './App.css';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/details/continent/:continent" element={<p>Deets</p>} />
+          <Route exact path="/continent/" element={<Details />} />
         </Routes>
       </Router>
     </div>

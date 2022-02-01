@@ -33,7 +33,7 @@ export const fetchContinents = () => (dispatch) => fetch(countriesUrl, requestOp
   })
   .catch((error) => dispatch({ type: ERROR, error }));
 
-  export const fetchCountries = (href, continent) => (dispatch) => fetch(`${href}countries/`, requestOptions)
+export const fetchCountries = (href, continent) => (dispatch) => fetch(`${href}countries/`, requestOptions)
   .then((response) => response.json())
   .then((data) => dispatch({ type: FETCHED_COUNTRIES, data, continent }))
   .catch((error) => dispatch({ type: ERROR, error }));
@@ -65,9 +65,12 @@ const reducer = (state = initialState, action) => {
       };
     }
     case FETCHED_COUNTRIES: {
-      const countries = action.data['_links']['country:items'].map(
-        (country) => country.name,
-      );
+      // const {continent} = action;
+      // const countries = {};
+      // countries[continent] = action.data['_links']['country:items'].map(
+      //   (country) => country.name,
+      // );
+      const countries = action.data['_links']['country:items'].map((country) => country.name);
       return {
         ...state,
         countries: [...countries],
