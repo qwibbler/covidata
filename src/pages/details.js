@@ -1,11 +1,11 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { fetchCountries } from '../redux/home/home';
 
 const Details = () => {
-  const [href, continent] = ['https://api.teleport.org/api/continents/geonames:AS/', 'Asia'];
-  // const { continent } = useParams();
+  const { continent, code } = useParams();
+  const href = `https://api.teleport.org/api/continents/geonames:${code}/`;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCountries(href, continent));

@@ -1,17 +1,17 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchCountries } from '../redux/home/home';
+// import { fetchCountries } from '../redux/home/home';
 
 const Home = () => {
-  const data = useSelector((state) => state.home.data);
+  const data = useSelector((state) => state.home.data.total);
   const continents = useSelector((state) => state.home.continents);
   // console.log(data);
-  const dispatch = useDispatch();
-  const handleClick = (e) => {
-    e.preventDefault();
-    dispatch(fetchCountries(e.target.name, e.target.textContent));
-  };
+  // const dispatch = useDispatch();
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   dispatch(fetchCountries(e.target.name, e.target.textContent));
+  // };
 
   return (
     <section className="home">
@@ -22,32 +22,32 @@ const Home = () => {
             <br />
             confirmed:
             {' '}
-            {data.total.today_confirmed.toLocaleString()}
+            {data.today_confirmed.toLocaleString()}
             <br />
             deaths:
             {' '}
-            {data.total.today_deaths.toLocaleString()}
+            {data.today_deaths.toLocaleString()}
             <br />
             new:
             {' '}
-            {data.total.today_new_confirmed.toLocaleString()}
+            {data.today_new_confirmed.toLocaleString()}
           </p>
         )}
       </div>
       <div className="continents">
         {continents.map((continent) => (
-          <button
-            type="button"
+          <Link
             key={continent.name}
-            href={continent.href}
-            name={continent.href}
-            onClick={handleClick}
+            to={`/continent/${continent.name}/${continent.href.slice(-3)}`}
+            // href={continent.href}
+            // name={continent.href}
+            // onClick={handleClick}
           >
             {continent.name}
-          </button>
+          </Link>
         ))}
       </div>
-      <Link to="/continent">Deets</Link>
+      <Link to="/continent/Asia/AS">Deets</Link>
     </section>
   );
 };
