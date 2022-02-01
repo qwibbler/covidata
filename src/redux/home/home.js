@@ -1,3 +1,4 @@
+/* eslint dot-notation: 0 */ //
 import { DateTime } from 'luxon';
 
 export const ERROR = 'api/ERROR';
@@ -6,8 +7,9 @@ export const FETCHED_DATA = 'api/data/FETCHED';
 export const FETCHED_CONTINENT = 'api/continent/FETCHED';
 export const FETCHED_COUNTRIES = 'api/countries/FETCHED';
 
-export const url = 'https://api.covid19tracking.narrativa.com/api/';
-const now = DateTime.now().toFormat('yyyy-MM-dd');
+export const covidUrl = 'https://api.covid19tracking.narrativa.com/api/';
+export const countriesUrl = 'https://api.teleport.org/api/continents/';
+export const now = DateTime.now().toFormat('yyyy-MM-dd');
 
 const myHeaders = new Headers();
 const requestOptions = {
@@ -18,30 +20,29 @@ const requestOptions = {
 
 export const fetchData = (date = now) => (dispatch) => {
   dispatch({ type: LOAD_DATA });
-  return fetch(
-    `https://api.covid19tracking.narrativa.com/api/${date}`,
-    requestOptions,
-  )
+  return fetch(`${covidUrl + date}`, requestOptions)
     .then((response) => response.json())
     .then((data) => dispatch({ type: FETCHED_DATA, data, date }))
     .catch((error) => dispatch({ type: ERROR, error }));
 };
 
-export const fetchContinents = () => (dispatch) => fetch('https://api.teleport.org/api/continents/', requestOptions)
+export const fetchContinents = () => (dispatch) => fetch(countriesUrl, requestOptions)
   .then((response) => response.json())
-  .then((data) => dispatch({ type: FETCHED_CONTINENT, data }))
+  .then((data) => {
+    dispatch({ type: FETCHED_CONTINENT, data });
+  })
   .catch((error) => dispatch({ type: ERROR, error }));
 
-export const fetchCountries = (continent) => (dispatch) => fetch(`${continent.href}/countries/`, requestOptions)
+  export const fetchCountries = (href, continent) => (dispatch) => fetch(`${href}countries/`, requestOptions)
   .then((response) => response.json())
-  .then((data) => dispatch({ type: FETCHED_COUNTRIES, data, continent: continent.name }))
+  .then((data) => dispatch({ type: FETCHED_COUNTRIES, data, continent }))
   .catch((error) => dispatch({ type: ERROR, error }));
 
 const initialState = {
   data: {},
   date: '',
   continents: [],
-  countries: {},
+  countries: [],
   loading: false,
   error: '',
 };
@@ -59,17 +60,17 @@ const reducer = (state = initialState, action) => {
     case FETCHED_CONTINENT: {
       return {
         ...state,
-        continents: [...action.data['_links']['continent:items']], // eslint-disable-line dot-notation
+        continents: [...action.data['_links']['continent:items']],
         loading: false,
       };
     }
     case FETCHED_COUNTRIES: {
-      const { continent } = action;
-      console.log(continent);
-      const countries = action.data['_links']['country:items'].map((country) => country.name); // eslint-disable-line dot-notation
+      const countries = action.data['_links']['country:items'].map(
+        (country) => country.name,
+      );
       return {
         ...state,
-        countries: { continent: countries },
+        countries: [...countries],
         loading: false,
       };
     }
@@ -81,7 +82,7 @@ const reducer = (state = initialState, action) => {
       };
     }
     case ERROR: {
-      console.log(action.error);
+      // console.log(action.error);
       return {
         ...state,
         loading: false,
