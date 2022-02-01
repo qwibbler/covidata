@@ -1,22 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { fetchCountries } from '../redux/home/home';
 
 const Home = () => {
   const data = useSelector((state) => state.home.data.total);
   const continents = useSelector((state) => state.home.continents);
-  // console.log(data);
-  // const dispatch = useDispatch();
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   dispatch(fetchCountries(e.target.name, e.target.textContent));
-  // };
 
   return (
     <section className="home">
       <div className="world">
-        {data.total && (
+        {data && (
           <p>
             total:
             <br />
@@ -38,10 +31,7 @@ const Home = () => {
         {continents.map((continent) => (
           <Link
             key={continent.name}
-            to={`/continent/${continent.name}/${continent.href.slice(-3)}`}
-            // href={continent.href}
-            // name={continent.href}
-            // onClick={handleClick}
+            to={`/continent/${continent.name}/${continent.code}`}
           >
             {continent.name}
           </Link>

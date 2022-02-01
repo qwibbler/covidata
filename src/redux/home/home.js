@@ -4,7 +4,6 @@ import { DateTime } from 'luxon';
 export const ERROR = 'api/ERROR';
 export const LOAD_DATA = 'api/data/LOAD';
 export const FETCHED_DATA = 'api/data/FETCHED';
-export const FETCHED_CONTINENT = 'api/continent/FETCHED';
 export const FETCHED_COUNTRIES = 'api/countries/FETCHED';
 
 export const covidUrl = 'https://api.covid19tracking.narrativa.com/api/';
@@ -26,13 +25,6 @@ export const fetchData = (date = now) => (dispatch) => {
     .catch((error) => dispatch({ type: ERROR, error }));
 };
 
-export const fetchContinents = () => (dispatch) => fetch(countriesUrl, requestOptions)
-  .then((response) => response.json())
-  .then((data) => {
-    dispatch({ type: FETCHED_CONTINENT, data });
-  })
-  .catch((error) => dispatch({ type: ERROR, error }));
-
 export const fetchCountries = (href, continent) => (dispatch) => fetch(`${href}countries/`, requestOptions)
   .then((response) => response.json())
   .then((data) => dispatch({ type: FETCHED_COUNTRIES, data, continent }))
@@ -41,7 +33,36 @@ export const fetchCountries = (href, continent) => (dispatch) => fetch(`${href}c
 const initialState = {
   data: {},
   date: '',
-  continents: [],
+  continents: [
+    {
+      code: 'AF',
+      name: 'Africa',
+    },
+    {
+      code: 'AN',
+      name: 'Antarctica',
+    },
+    {
+      code: 'AS',
+      name: 'Asia',
+    },
+    {
+      code: 'EU',
+      name: 'Europe',
+    },
+    {
+      code: 'NA',
+      name: 'North America',
+    },
+    {
+      code: 'OC',
+      name: 'Oceania',
+    },
+    {
+      code: 'SA',
+      name: 'South America',
+    },
+  ],
   countries: [],
   loading: false,
   error: '',
@@ -57,20 +78,15 @@ const reducer = (state = initialState, action) => {
         loading: false,
       };
     }
-    case FETCHED_CONTINENT: {
-      return {
-        ...state,
-        continents: [...action.data['_links']['continent:items']],
-        loading: false,
-      };
-    }
     case FETCHED_COUNTRIES: {
       // const {continent} = action;
       // const countries = {};
       // countries[continent] = action.data['_links']['country:items'].map(
       //   (country) => country.name,
       // );
-      const countries = action.data['_links']['country:items'].map((country) => country.name);
+      const countries = action.data['_links']['country:items'].map(
+        (country) => country.name,
+      );
       return {
         ...state,
         countries: [...countries],
