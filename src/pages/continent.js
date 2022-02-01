@@ -23,7 +23,6 @@ const Continent = () => {
       return { ...country };
     })
     .filter((country) => data[country.name]);
-  // console.log('countriesArr', countriesFiltered);
 
   return (
     <section className="continent">
