@@ -1,26 +1,29 @@
-import { React, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { React } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchCountries } from '../redux/home/home';
 
 const Details = () => {
-  const { continent, code } = useParams();
-  const href = `https://api.teleport.org/api/continents/geonames:${code}/`;
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchCountries(href, continent));
-  }, []);
-
-  const countries = useSelector((state) => state.home.countries);
+  const { country } = useParams();
   const date = useSelector((state) => state.home.date);
-  const data = useSelector((state) => state.home.data.dates[date].countries);
-  const filteredData = Object.entries(data).filter((country) => countries.includes(country[0]));
+  const data = useSelector(
+    (state) => state.home.data.dates[date].countries[country],
+  );
+  const dataArr = Object.entries(data).map(([key, value]) => [key, value]);
+  console.log(dataArr);
   return (
-    <section className="details">
-      <h1>continent</h1>
-      {filteredData.map((country) => (
-        <p key={country[0]}>{country[0]}</p>
-      ))}
+    <section className="country">
+      {dataArr.map((entry) => {
+        if (typeof entry[1] === 'string' || typeof entry[1] === 'number') {
+          return (
+            <p key={entry[0]}>
+              {entry[0]}
+              :
+              {entry[1]}
+            </p>
+          );
+        }
+        return <br key={entry[0]} />;
+      })}
     </section>
   );
 };

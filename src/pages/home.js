@@ -29,15 +29,17 @@ const Home = () => {
       </div>
       <div className="continents">
         {continents.map((continent) => (
-          <Link
-            key={continent.name}
-            to={`/continent/${continent.name}/${continent.code}`}
-          >
-            {continent.name}
-          </Link>
+          <>
+            <Link
+              key={continent.name}
+              to={`/continent/${continent.name}/${continent.code}`}
+            >
+              {continent.name}
+            </Link>
+            <br />
+          </>
         ))}
       </div>
-      <Link to="/continent/Asia/AS">Deets</Link>
     </section>
   );
 };
