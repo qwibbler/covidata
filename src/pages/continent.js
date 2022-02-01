@@ -26,7 +26,7 @@ const Continent = () => {
 
   return (
     <section className="continent">
-      <h1>continent</h1>
+      <h1>{continent}</h1>
       {countriesFiltered.map((country) => (
         <>
           <Link

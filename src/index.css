@@ -1,4 +1,7 @@
 body {
+  --theme: #ee1b1b;
+  background-color: var(--theme);
+  color: white;
   margin: 0;
   font-family:
     -apple-system,
@@ -14,14 +17,4 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
 }

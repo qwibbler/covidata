@@ -3,6 +3,7 @@ import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchPopulation } from '../redux/home/home';
+import DetailInfo from '../components/detail-info';
 
 const Details = () => {
   const { country, countryCode } = useParams();
@@ -17,78 +18,32 @@ const Details = () => {
   return (
     <section className="country">
       <h2>{data.name}</h2>
-      <p>
-        Total Population:
-        {' '}
-        {population.toLocaleString()}
-      </p>
+      <DetailInfo infoName="Total Population: " infoNumber={population} />
       <p />
-      <p>
-        Total Confirmed Cases:
-        {' '}
-        {data.today_confirmed.toLocaleString()}
-      </p>
-      <p>
-        New Confirmed Cases:
-        {' '}
-        {data.today_new_confirmed.toLocaleString()}
-      </p>
-      <p>
-        Confirmed Cases Per Population:
-        {' '}
-        {((data.today_confirmed / population) * 100)
-          .toFixed(2)
-          .toLocaleString()}
-        %
-      </p>
-      <p>
-        Total Deaths:
-        {' '}
-        {data.today_deaths.toLocaleString()}
-      </p>
-      <p>
-        New Deaths:
-        {' '}
-        {data.today_new_deaths.toLocaleString()}
-      </p>
-      <p>
-        Deaths Per Population:
-        {' '}
-        {((data.today_deaths / population) * 100).toLocaleString()}
-        %
-      </p>
-      <p>
-        Total Open Cases:
-        {' '}
-        {data.today_open_cases.toLocaleString()}
-      </p>
-      <p>
-        New Open Cases:
-        {' '}
-        {data.today_new_open_cases.toLocaleString()}
-      </p>
-      <p>
-        Open Cases Per Population:
-        {' '}
-        {((data.today_open_cases / population) * 100).toLocaleString()}
-        %
-      </p>
-      <p>
-        Total Recovered:
-        {' '}
-        {data.today_recovered.toLocaleString()}
-      </p>
-      <p>
-        New Recovered:
-        {' '}
-        {data.today_new_recovered.toLocaleString()}
-      </p>
-      <p>
-        Recovered Per Population:
-        {' '}
-        {((data.today_recovered / population) * 100).toLocaleString()}
-        %
-      </p>
+      <DetailInfo infoName="Total Confirmed Cases: " infoNumber={data.today_confirmed} />
+      <DetailInfo infoName="New Confirmed Cases: " infoNumber={data.today_new_confirmed} />
+      <DetailInfo
+        infoName="Confirmed Cases Per Population: "
+        infoNumber={((data.today_confirmed / population) * 100).toFixed(2)}
+      />
+      <DetailInfo infoName="Total Deaths: " infoNumber={data.today_deaths} />
+      <DetailInfo infoName="New Deaths: " infoNumber={data.today_new_deaths} />
+      <DetailInfo
+        infoName="Deaths Per Population: "
+        infoNumber={((data.today_deaths / population) * 100).toFixed(2)}
+      />
+      <DetailInfo infoName="Total Open Cases: " infoNumber={data.today_open_cases} />
+      <DetailInfo infoName="New Open Cases: " infoNumber={data.today_new_open_cases} />
+      <DetailInfo
+        infoName="Open Cases Per Population: "
+        infoNumber={((data.today_open_cases / population) * 100).toFixed(2)}
+      />
+      <DetailInfo infoName="Total Recovered: " infoNumber={data.today_recovered} />
+      <DetailInfo infoName="New Recovered: " infoNumber={data.today_new_recovered} />
+      <DetailInfo
+        infoName="Recovered Per Population: "
+        infoNumber={((data.today_recovered / population) * 100).toFixed(2)}
+      />
     </section>
   );
 };
