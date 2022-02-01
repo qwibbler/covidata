@@ -5,11 +5,10 @@ import { continentsList } from '../redux/home/home';
 
 const Home = () => {
   const total = useSelector((state) => state.home.total);
-  console.log(`total: ${total}`);
   return (
     <section className="home">
       <div className="world">
-        {/* {total && (
+        {total.date && (
           <p>
             total:
             <br />
@@ -25,7 +24,7 @@ const Home = () => {
             {' '}
             {total.today_new_confirmed.toLocaleString()}
           </p>
-        )} */}
+        )}
       </div>
       <div className="continents">
         {continentsList.map((continent) => (

@@ -80,8 +80,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHED_DATA: {
-      console.log('TOTAL!', action.data.total);
-      console.log('TOTAL!', state.total);
       return {
         ...state,
         date: action.date,
