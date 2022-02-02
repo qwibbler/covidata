@@ -1,7 +1,7 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { React, useEffect } from 'react';
-import { fetchData } from './redux/home/home';
+import { fetchData, randOpacity } from './redux/home/home';
 import Header from './components/header';
 import Home from './pages/home';
 import Continent from './pages/continent';
@@ -19,11 +19,11 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home randOpacity={randOpacity()} />} />
           <Route
             exact
             path="/continent/:continent/:code"
-            element={<Continent />}
+            element={<Continent randOpacity={randOpacity()} />}
           />
           <Route
             exact

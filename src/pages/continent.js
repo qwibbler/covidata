@@ -1,11 +1,13 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { fetchCountries, randOpacity } from '../redux/home/home';
+import PropTypes from 'prop-types';
+import { fetchCountries } from '../redux/home/home';
 import { corresponding } from '../redux/home/namefix';
 import './continent.css';
 
-const Continent = () => {
+const Continent = (props) => {
+  const { randOpacity } = props;
   const { continent, code } = useParams();
   const href = `https://api.teleport.org/api/continents/geonames:${code}/`;
   const dispatch = useDispatch();
@@ -44,5 +46,8 @@ const Continent = () => {
       </div>
     </section>
   );
+};
+Continent.propTypes = {
+  randOpacity: PropTypes.func.isRequired,
 };
 export default Continent;

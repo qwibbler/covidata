@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="home"
+>
+  <div
+    className="world"
+  >
+    <p>
+      Total: 
+    </p>
+    <div
+      className="info bar"
+    >
+      <div
+        className="div-bg"
+      />
+      <p>
+        Population: 
+      </p>
+      <p>
+        7,924,303,275
+      </p>
+    </div>
+    <div
+      className="info bar"
+    >
+      <div
+        className="div-bg"
+      />
+      <p>
+        Confirmed: 
+      </p>
+      <p>
+        90
+      </p>
+    </div>
+    <div
+      className="info bar"
+    >
+      <div
+        className="div-bg"
+      />
+      <p>
+        Per Population: 
+      </p>
+      <p>
+        0.00%
+      </p>
+    </div>
+    <div
+      className="info bar"
+    >
+      <div
+        className="div-bg"
+      />
+      <p>
+        Deaths: 
+      </p>
+      <p>
+        89
+      </p>
+    </div>
+    <div
+      className="info bar"
+    >
+      <div
+        className="div-bg"
+      />
+      <p>
+        Per Population: 
+      </p>
+      <p>
+        0.00%
+      </p>
+    </div>
+    <div
+      className="info bar"
+    >
+      <div
+        className="div-bg"
+      />
+      <p>
+        New Confirmed: 
+      </p>
+      <p>
+        87
+      </p>
+    </div>
+    <div
+      className="info bar"
+    >
+      <div
+        className="div-bg"
+      />
+      <p>
+        Per Population: 
+      </p>
+      <p>
+        0.00%
+      </p>
+    </div>
+  </div>
+  <div
+    className="home tabs"
+  >
+    <div
+      className="continent tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/Africa/AF"
+        onClick={[Function]}
+      >
+        Africa
+      </a>
+    </div>
+    <div
+      className="continent tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/Antarctica/AN"
+        onClick={[Function]}
+      >
+        Antarctica
+      </a>
+    </div>
+    <div
+      className="continent tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/Asia/AS"
+        onClick={[Function]}
+      >
+        Asia
+      </a>
+    </div>
+    <div
+      className="continent tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/Europe/EU"
+        onClick={[Function]}
+      >
+        Europe
+      </a>
+    </div>
+    <div
+      className="continent tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/North America/NA"
+        onClick={[Function]}
+      >
+        North America
+      </a>
+    </div>
+    <div
+      className="continent tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/Oceania/OC"
+        onClick={[Function]}
+      >
+        Oceania
+      </a>
+    </div>
+    <div
+      className="continent tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/South America/SA"
+        onClick={[Function]}
+      >
+        South America
+      </a>
+    </div>
+  </div>
+</section>
+`;

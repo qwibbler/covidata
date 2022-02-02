@@ -1,12 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { continentsList, randOpacity } from '../redux/home/home';
+import PropTypes from 'prop-types';
+import { continentsList } from '../redux/home/home';
 import DetailInfo from '../components/detail-info';
 import './home.css';
 
 const population = 7924303275;
-const Home = () => {
+const Home = (props) => {
+  const { randOpacity } = props;
   const total = useSelector((state) => state.home.total);
   return (
     <section className="home">
@@ -52,5 +54,8 @@ const Home = () => {
       </div>
     </section>
   );
+};
+Home.propTypes = {
+  randOpacity: PropTypes.func.isRequired,
 };
 export default Home;
