@@ -19,7 +19,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home randOpacity={randOpacity()} />} />
+          <Route exact path="/" element={<Home randOpacity={randOpacity} />} />
           <Route
             exact
             path="/continent/:continent/:code"

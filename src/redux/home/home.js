@@ -17,10 +17,6 @@ export const continentsList = [
     name: 'Africa',
   },
   {
-    code: 'AN',
-    name: 'Antarctica',
-  },
-  {
     code: 'AS',
     name: 'Asia',
   },

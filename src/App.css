@@ -12,8 +12,13 @@ header {
 
 header button {
   margin: 1rem;
+  cursor: pointer;
   background: transparent;
   color: var(--font-color);
   border: none;
   font-weight: bold;
+}
+
+a {
+  text-decoration: none;
 }
