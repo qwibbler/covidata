@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="info bar"
+>
+  <div
+    className="div-bg"
+  />
+  <p>
+    Test: 
+  </p>
+  <p>
+    100
+  </p>
+</div>
+`;
