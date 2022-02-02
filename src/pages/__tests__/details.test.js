@@ -23,7 +23,7 @@ const store = mockStore({
     },
   },
 });
-const route = { params: { country: 'Pakistan', countryCode: 'PK' } }
+const route = { params: { country: 'Pakistan', countryCode: 'PK' } };
 
 it('renders correctly', () => {
   const component = renderer.create(
