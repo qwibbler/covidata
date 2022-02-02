@@ -50,25 +50,30 @@ const requestOptions = {
   redirect: 'follow',
 };
 
+export const dataAction = (data, date) => ({ type: FETCHED_DATA, data, date });
+export const errorAction = (error) => ({ type: ERROR, error });
+export const countryAction = (data) => ({ type: FETCHED_COUNTRIES, data });
+export const popAction = (data) => ({ type: FETCHED_POP, data });
+
 export const fetchData = (date = now) => (dispatch) => {
   dispatch({ type: LOAD_DATA });
   return fetch(`${covidUrl + date}`, requestOptions)
     .then((response) => response.json())
-    .then((data) => dispatch({ type: FETCHED_DATA, data, date }))
-    .catch((error) => dispatch({ type: ERROR, error }));
+    .then((data) => dispatch(dataAction(data, date)))
+    .catch((error) => dispatch(errorAction(error)));
 };
 
 export const fetchCountries = (href) => (dispatch) => fetch(`${href}countries/`, requestOptions)
   .then((response) => response.json())
-  .then((data) => dispatch({ type: FETCHED_COUNTRIES, data }))
-  .catch((error) => dispatch({ type: ERROR, error }));
+  .then((data) => dispatch(countryAction(data)))
+  .catch((error) => dispatch(errorAction(error)));
 
 export const fetchPopulation = (code) => (dispatch) => fetch(`${popUrl + code}/`, requestOptions)
   .then((response) => response.json())
-  .then((data) => dispatch({ type: FETCHED_POP, data }))
-  .catch((error) => dispatch({ type: ERROR, error }));
+  .then((data) => dispatch(popAction(data)))
+  .catch((error) => dispatch(errorAction(error)));
 
-const initialState = {
+export const initialState = {
   data: {},
   total: {},
   date: '',
