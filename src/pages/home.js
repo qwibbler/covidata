@@ -1,14 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { continentsList } from '../redux/home/home';
+import { continentsList, randOpacity } from '../redux/home/home';
 import DetailInfo from '../components/detail-info';
 import './home.css';
 
 const population = 7924303275;
 const Home = () => {
   const total = useSelector((state) => state.home.total);
-  const randOpacity = () => ({ opacity: (Math.random() * 0.3 + 0.2).toString() });
   return (
     <section className="home">
       {total.date && (
@@ -41,9 +40,9 @@ const Home = () => {
           />
         </div>
       )}
-      <div className="continents">
+      <div className="home tabs">
         {continentsList.map((continent) => (
-          <div className="continent" key={continent.name}>
+          <div className="continent tab" key={continent.name}>
             <div className="div-bg" style={randOpacity()} />
             <Link to={`/continent/${continent.name}/${continent.code}`}>
               {continent.name}

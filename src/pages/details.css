@@ -1,0 +1,15 @@
+.bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100vw;
+}
+
+.bar:nth-child(even) .div-bg {
+  opacity: 0.3;
+}
+
+.bar:nth-child(odd) .div-bg {
+  opacity: 0.2;
+}

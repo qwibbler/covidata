@@ -8,18 +8,21 @@
   background-repeat: no-repeat;
 }
 
-.continents {
+.tabs {
   display: flex;
   flex-wrap: wrap;
 }
 
-.continent {
+.tab {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 50vw;
   flex-grow: 1;
+}
+
+.continent.tab {
   height: calc((100vh - 350px) / 4);
   min-height: max-content;
 }

@@ -41,6 +41,7 @@ export const continentsList = [
     name: 'South America',
   },
 ];
+export const randOpacity = () => ({ opacity: (Math.random() * 0.3 + 0.2).toString() });
 
 const myHeaders = new Headers();
 const requestOptions = {

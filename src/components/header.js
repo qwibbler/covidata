@@ -5,14 +5,12 @@ import { now } from '../redux/home/home';
 const Header = () => {
   const navigate = useNavigate();
   const { continent, country } = useParams();
-  const blurb = country || (continent || now);
-  console.log(blurb);
   return (
     <header>
       <button type="button" onClick={() => navigate(-1)}>
         &#60;
       </button>
-      {blurb}
+      {country || (continent || now)}
       <button type="button">&#9881;</button>
     </header>
   );
