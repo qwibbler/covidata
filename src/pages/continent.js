@@ -1,13 +1,11 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { fetchCountries } from '../redux/home/home';
-import { corresponding } from '../redux/home/namefix';
+import { corresponding, pop } from '../redux/home/staticData';
 import './continent.css';
 
-const Continent = (props) => {
-  const { randOpacity } = props;
+const Continent = () => {
   const { continent, code } = useParams();
   const href = `https://api.teleport.org/api/continents/geonames:${code}/`;
   const dispatch = useDispatch();
@@ -27,13 +25,18 @@ const Continent = (props) => {
     })
     .filter((country) => data[country.name]);
 
+  const densityOpecity = (country) => {
+    const percent = data[country.name].today_confirmed / pop[country.href.slice(-3)];
+    return { opacity: percent * 2 };
+  };
+
   return (
     <section className="countries">
       <h1>{continent}</h1>
       <div className="countries tabs">
         {countriesFiltered.map((country) => (
           <div className="country tab" key={country.name}>
-            <div className="div-bg" style={randOpacity()} />
+            <div className="div-bg" style={densityOpecity(country)} />
             <Link
               to={`/continent/${continent}/${code}/${
                 country.name
@@ -46,8 +49,5 @@ const Continent = (props) => {
       </div>
     </section>
   );
-};
-Continent.propTypes = {
-  randOpacity: PropTypes.func.isRequired,
 };
 export default Continent;

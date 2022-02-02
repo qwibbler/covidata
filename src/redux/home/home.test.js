@@ -1,14 +1,11 @@
-// import configureMockStore from 'redux-mock-store';
 import reducer, {
   initialState,
   dataAction,
   errorAction,
   countryAction,
-  popAction,
   ERROR,
   FETCHED_DATA,
   FETCHED_COUNTRIES,
-  FETCHED_POP,
 } from './home';
 
 describe('Test Reducer', () => {
@@ -44,12 +41,6 @@ describe('Test Reducer', () => {
     const result = reducer(initialState, action);
     expect(result).toStrictEqual(state);
   });
-  it('should return fetched pop', () => {
-    const state = { ...initialState, population: 6 };
-    const action = { type: 'api/pop/FETCHED', data: { population: 6 } };
-    const result = reducer(initialState, action);
-    expect(result).toEqual(state);
-  });
   it('should return fetched countries', () => {
     const state = { ...initialState, countries: [] };
     const action = {
@@ -77,8 +68,5 @@ describe('Test Actions', () => {
       type: FETCHED_COUNTRIES,
       data: 'countries',
     });
-  });
-  it('should return popAction', () => {
-    expect(popAction(900)).toStrictEqual({ type: FETCHED_POP, data: 900 });
   });
 });

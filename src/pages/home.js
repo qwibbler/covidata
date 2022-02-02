@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { continentsList } from '../redux/home/home';
+import { continentsList } from '../redux/home/staticData';
 import DetailShow from '../components/detail-show';
 import './home.css';
 

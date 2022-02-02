@@ -55,6 +55,6 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.continent.tab:hover > .div-bg {
+.tab:hover > .div-bg {
   opacity: 0.5 !important;
 }

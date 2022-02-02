@@ -1,20 +1,15 @@
 /* eslint camelcase: 0 */
-import { React, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { React } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchPopulation } from '../redux/home/home';
 import DetailInfo from '../components/detail-info';
+import { pop } from '../redux/home/staticData';
 import './details.css';
 
 const Details = () => {
   const { country, countryCode } = useParams();
-  const population = useSelector((state) => state.home.population);
+  const population = pop[`${countryCode}/`];
   const data = useSelector((state) => state.home.data[country]);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchPopulation(countryCode));
-  }, []);
 
   return (
     <section className="country">

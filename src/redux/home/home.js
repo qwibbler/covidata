@@ -11,33 +11,11 @@ export const covidUrl = 'https://api.covid19tracking.narrativa.com/api/';
 export const countriesUrl = 'https://api.teleport.org/api/continents/';
 export const popUrl = 'https://api.teleport.org/api/countries/iso_alpha2:';
 export const now = DateTime.now().toFormat('yyyy-MM-dd');
-export const continentsList = [
-  {
-    code: 'AF',
-    name: 'Africa',
-  },
-  {
-    code: 'AS',
-    name: 'Asia',
-  },
-  {
-    code: 'EU',
-    name: 'Europe',
-  },
-  {
-    code: 'NA',
-    name: 'North America',
-  },
-  {
-    code: 'OC',
-    name: 'Oceania',
-  },
-  {
-    code: 'SA',
-    name: 'South America',
-  },
-];
 export const randOpacity = () => ({ opacity: (Math.random() * 0.3 + 0.2).toString() });
+
+export const dataAction = (data, date) => ({ type: FETCHED_DATA, data, date });
+export const errorAction = (error) => ({ type: ERROR, error });
+export const countryAction = (data) => ({ type: FETCHED_COUNTRIES, data });
 
 const myHeaders = new Headers();
 const requestOptions = {
@@ -45,11 +23,6 @@ const requestOptions = {
   headers: myHeaders,
   redirect: 'follow',
 };
-
-export const dataAction = (data, date) => ({ type: FETCHED_DATA, data, date });
-export const errorAction = (error) => ({ type: ERROR, error });
-export const countryAction = (data) => ({ type: FETCHED_COUNTRIES, data });
-export const popAction = (data) => ({ type: FETCHED_POP, data });
 
 export const fetchData = (date = now) => (dispatch) => {
   dispatch({ type: LOAD_DATA });
@@ -64,17 +37,12 @@ export const fetchCountries = (href) => (dispatch) => fetch(`${href}countries/`,
   .then((data) => dispatch(countryAction(data)))
   .catch((error) => dispatch(errorAction(error)));
 
-export const fetchPopulation = (code) => (dispatch) => fetch(`${popUrl + code}/`, requestOptions)
-  .then((response) => response.json())
-  .then((data) => dispatch(popAction(data)))
-  .catch((error) => dispatch(errorAction(error)));
-
 export const initialState = {
   data: {},
   total: {},
   date: '',
   countries: [],
-  population: 0,
+  population: {},
   loading: false,
   error: '',
 };
@@ -95,12 +63,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         countries: [...action.data['_links']['country:items']],
         loading: false,
-      };
-    }
-    case FETCHED_POP: {
-      return {
-        ...state,
-        population: action.data.population,
       };
     }
     case LOAD_DATA: {

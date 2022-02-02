@@ -23,7 +23,7 @@ function App() {
           <Route
             exact
             path="/continent/:continent/:code"
-            element={<Continent randOpacity={randOpacity} />}
+            element={<Continent />}
           />
           <Route
             exact
