@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="countries"
+>
+  <h1 />
+  <div
+    className="countries tabs"
+  >
+    <div
+      className="country tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/undefined/undefined/US/US/"
+        onClick={[Function]}
+      >
+        US
+      </a>
+    </div>
+    <div
+      className="country tab"
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": "0.25",
+          }
+        }
+      />
+      <a
+        href="#/continent/undefined/undefined/Pakistan/PK/"
+        onClick={[Function]}
+      >
+        Pakistan
+      </a>
+    </div>
+  </div>
+</section>
+`;
