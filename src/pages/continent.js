@@ -8,6 +8,7 @@ import './continent.css';
 
 const Continent = () => {
   const { continent, code } = useParams();
+
   const href = `https://api.teleport.org/api/continents/geonames:${code}/`;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -16,22 +17,23 @@ const Continent = () => {
 
   const countries = useSelector((state) => state.home.countries);
   const data = useSelector((state) => state.home.data);
-
   const countriesFiltered = countries
-    .map((country) => ({ ...country, name: corresponding[country.name] }))
+    .map((country) => (corresponding[country.name]
+      ? { ...country, name: corresponding[country.name] }
+      : { ...country }))
     .filter((country) => data[country.name]);
-
-  const densityOpacity = (country) => {
-    const percent = data[country.name].today_confirmed / pop[country.href.slice(-3)];
-    return { opacity: percent * 2 + 0.2 };
-  };
 
   return (
     <section className="countries">
       <h1>{continent}</h1>
       <div className="countries tabs">
         {countriesFiltered.map((country) => (
-          <ContinentDiv key={country.name} country={country} densityOpacity={densityOpacity} />
+          <ContinentDiv
+            key={country.name}
+            country={country}
+            confirmed={data[country.name].today_confirmed}
+            population={pop[country.href.slice(-3)]}
+          />
         ))}
       </div>
     </section>

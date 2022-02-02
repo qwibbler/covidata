@@ -21,10 +21,6 @@
   margin-top: 0;
 }
 
-.continents h2 {
-  font-family: var(--title-font);
-}
-
 .tabs {
   display: flex;
   flex-wrap: wrap;
