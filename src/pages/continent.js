@@ -1,8 +1,9 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { fetchCountries } from '../redux/home/home';
+import { fetchCountries, randOpacity } from '../redux/home/home';
 import { corresponding } from '../redux/home/namefix';
+import './continent.css';
 
 const Continent = () => {
   const { continent, code } = useParams();
@@ -25,21 +26,22 @@ const Continent = () => {
     .filter((country) => data[country.name]);
 
   return (
-    <section className="continent">
-      <h1>continent</h1>
-      {countriesFiltered.map((country) => (
-        <>
-          <Link
-            to={`/continent/${continent}/${code}/${
-              country.name
-            }/${country.href.slice(-3)}`}
-            key={country.name}
-          >
-            {country.name}
-          </Link>
-          <br />
-        </>
-      ))}
+    <section className="countries">
+      <h1>{continent}</h1>
+      <div className="countries tabs">
+        {countriesFiltered.map((country) => (
+          <div className="country tab" key={country.name}>
+            <div className="div-bg" style={randOpacity()} />
+            <Link
+              to={`/continent/${continent}/${code}/${
+                country.name
+              }/${country.href.slice(-3)}`}
+            >
+              {country.name}
+            </Link>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
