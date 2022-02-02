@@ -1,7 +1,7 @@
 body {
-  --theme: #ee1b1b;
-  background-color: var(--theme);
-  color: white;
+  --theme: #109201;
+  --font-color: #fdfddb;
+
   margin: 0;
   font-family:
     -apple-system,
@@ -17,4 +17,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--theme);
+}
+
+* {
+  color: var(--font-color);
 }
