@@ -5,6 +5,7 @@ import { fetchCountries, filterAction } from '../redux/home/home';
 import { corresponding, pop } from '../redux/home/staticData';
 import InputSearch from '../components/input-search';
 import ContinentDiv from '../components/continent-div';
+import Spinner from '../components/spinner';
 import './continent.css';
 
 const Continent = () => {
@@ -16,7 +17,7 @@ const Continent = () => {
     dispatch(fetchCountries(href));
   }, []);
 
-  // const loading = useSelector((state) => state.home.loading);
+  const loading = useSelector((state) => state.home.loading);
   const filterStr = useSelector((state) => state.home.filter);
   const countries = useSelector((state) => state.home.countries);
   const data = useSelector((state) => state.home.data);
@@ -34,15 +35,17 @@ const Continent = () => {
         <h1>{continent}</h1>
         <InputSearch placeholder="Search by country" name="filter-input" value={filterStr} action={filterAction} />
       </div>
-      <div className="countries tabs">
-        {countriesFiltered.map((country) => (
+      <div className="countries tabs spin-b4">
+        {!loading ? (countriesFiltered.map((country) => (
           <ContinentDiv
             key={country.name}
             country={country}
             confirmed={data[country.name].today_confirmed}
             population={pop[country.href.slice(-3)]}
           />
-        ))}
+        ))) : (
+          <Spinner />
+        )}
       </div>
     </section>
   );
