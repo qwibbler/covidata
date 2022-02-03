@@ -15,7 +15,10 @@ const Details = () => {
     <section className="country">
       {data && (
       <>
-        <h2>{data.name}</h2>
+        <div className="heading">
+          <div className="div-bg light" />
+          <h2>{data.name}</h2>
+        </div>
         <div className="details tabs">
           <DetailInfo infoName="Total Population: " infoNumber={population} />
           <DetailInfo infoName="Total Confirmed Cases: " infoNumber={data.today_confirmed} />
