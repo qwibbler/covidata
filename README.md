@@ -16,7 +16,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://qwibbler-covidata.netlify.app/)
 
 
 ## Getting Started
@@ -48,7 +48,7 @@ NodeJS
 
 ### Deployment
 
-- Deployed at [Netlify]()
+- Deployed at [Netlify](https://qwibbler-covidata.netlify.app/)
 
 
 
