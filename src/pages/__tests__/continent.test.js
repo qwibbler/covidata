@@ -24,7 +24,7 @@ it('renders correctly', () => {
   const component = renderer.create(
     <Provider store={store}>
       <Router>
-        <Continent randOpacity={() => ({ opacity: '0.25' })} />
+        <Continent />
       </Router>
     </Provider>,
   );

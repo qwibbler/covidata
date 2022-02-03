@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
-import ProgressBar from './progress-bar';
 
 const ContinentDiv = (props) => {
   const { country, population, confirmed } = props;
@@ -29,7 +28,6 @@ const ContinentDiv = (props) => {
           </h3>
           <p>Percent</p>
         </div>
-        <ProgressBar />
       </div>
     </Link>
   );

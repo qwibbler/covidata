@@ -8,42 +8,90 @@ exports[`renders correctly 1`] = `
   <div
     className="countries tabs"
   >
-    <div
-      className="country tab"
+    <a
+      className=" tab"
+      href="#/continent/undefined/undefined/US/US/"
+      onClick={[Function]}
     >
       <div
-        className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
-      />
-      <a
-        href="#/continent/undefined/undefined/US/US/"
-        onClick={[Function]}
+        className="country tab"
       >
-        US
-      </a>
-    </div>
-    <div
-      className="country tab"
+        <div
+          className="div-bg"
+          style={
+            Object {
+              "opacity": NaN,
+            }
+          }
+        />
+        <h2>
+          US
+        </h2>
+        <div
+          className="info block"
+        >
+          <h3>
+            310232863
+          </h3>
+          <p>
+            Population
+          </p>
+          <h3 />
+          <p>
+            Confirmed
+          </p>
+          <h3>
+            NaN
+            %
+          </h3>
+          <p>
+            Percent
+          </p>
+        </div>
+      </div>
+    </a>
+    <a
+      className=" tab"
+      href="#/continent/undefined/undefined/Pakistan/PK/"
+      onClick={[Function]}
     >
       <div
-        className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
-      />
-      <a
-        href="#/continent/undefined/undefined/Pakistan/PK/"
-        onClick={[Function]}
+        className="country tab"
       >
-        Pakistan
-      </a>
-    </div>
+        <div
+          className="div-bg"
+          style={
+            Object {
+              "opacity": NaN,
+            }
+          }
+        />
+        <h2>
+          Pakistan
+        </h2>
+        <div
+          className="info block"
+        >
+          <h3>
+            184404791
+          </h3>
+          <p>
+            Population
+          </p>
+          <h3 />
+          <p>
+            Confirmed
+          </p>
+          <h3>
+            NaN
+            %
+          </h3>
+          <p>
+            Percent
+          </p>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
 `;
