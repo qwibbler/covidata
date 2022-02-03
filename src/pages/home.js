@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { continentsList } from '../redux/home/home';
-import DetailInfo from '../components/detail-info';
+import { continentsList } from '../redux/home/staticData';
+import DetailShow from '../components/detail-show';
 import './home.css';
 
 const population = 7924303275;
@@ -14,29 +14,28 @@ const Home = (props) => {
     <section className="home">
       {total.date && (
         <div className="world">
-          <p>Total: </p>
-          <DetailInfo infoName="Population: " infoNumber={population} />
-          <DetailInfo
-            infoName="Confirmed: "
+          <DetailShow infoName="Population" infoNumber={population} />
+          <DetailShow
+            infoName="Confirmed"
             infoNumber={total.today_confirmed}
           />
-          <DetailInfo
-            infoName="Per Population: "
+          <DetailShow
+            infoName="Per Population"
             infoNumber={total.today_confirmed}
             population={population}
           />
-          <DetailInfo infoName="Deaths: " infoNumber={total.today_deaths} />
-          <DetailInfo
-            infoName="Per Population: "
+          <DetailShow infoName="Deaths" infoNumber={total.today_deaths} />
+          <DetailShow
+            infoName="Per Population"
             infoNumber={total.today_deaths}
             population={population}
           />
-          <DetailInfo
-            infoName="New Confirmed: "
+          <DetailShow
+            infoName="New Confirmed"
             infoNumber={total.today_new_confirmed}
           />
-          <DetailInfo
-            infoName="Per Population: "
+          <DetailShow
+            infoName="Per Population"
             infoNumber={total.today_new_confirmed}
             population={population}
           />
@@ -47,7 +46,7 @@ const Home = (props) => {
           <div className="continent tab" key={continent.name}>
             <div className="div-bg" style={randOpacity()} />
             <Link to={`/continent/${continent.name}/${continent.code}`}>
-              {continent.name}
+              <h2>{continent.name}</h2>
             </Link>
           </div>
         ))}

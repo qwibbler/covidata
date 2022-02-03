@@ -1,4 +1,6 @@
 .world {
+  padding: 1rem;
+  text-align: right;
   background:
     url(../../public/covid-logo.png),
     linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(16, 146, 1, 1) 100%);
@@ -6,6 +8,17 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.world h3 {
+  font-family: var(--title-font);
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.world p {
+  font-size: 14px;
+  margin-top: 0;
 }
 
 .tabs {
@@ -23,7 +36,8 @@
 }
 
 .continent.tab {
-  height: calc((100vh - 350px) / 4);
+  z-index: 100;
+  height: calc((100vh - 430px) / 3);
   min-height: max-content;
 }
 
@@ -35,4 +49,8 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.tab:hover > .div-bg {
+  opacity: 0.5 !important;
 }

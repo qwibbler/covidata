@@ -7,98 +7,74 @@ exports[`renders correctly 1`] = `
   <div
     className="world"
   >
-    <p>
-      Total: 
-    </p>
     <div
-      className="info bar"
+      className="info show"
     >
-      <div
-        className="div-bg"
-      />
-      <p>
-        Population: 
-      </p>
-      <p>
+      <h3>
         7,924,303,275
+      </h3>
+      <p>
+        Population
       </p>
     </div>
     <div
-      className="info bar"
+      className="info show"
     >
-      <div
-        className="div-bg"
-      />
-      <p>
-        Confirmed: 
-      </p>
-      <p>
+      <h3>
         90
+      </h3>
+      <p>
+        Confirmed
       </p>
     </div>
     <div
-      className="info bar"
+      className="info show"
     >
-      <div
-        className="div-bg"
-      />
-      <p>
-        Per Population: 
-      </p>
-      <p>
+      <h3>
         0.00%
+      </h3>
+      <p>
+        Per Population
       </p>
     </div>
     <div
-      className="info bar"
+      className="info show"
     >
-      <div
-        className="div-bg"
-      />
-      <p>
-        Deaths: 
-      </p>
-      <p>
+      <h3>
         89
+      </h3>
+      <p>
+        Deaths
       </p>
     </div>
     <div
-      className="info bar"
+      className="info show"
     >
-      <div
-        className="div-bg"
-      />
-      <p>
-        Per Population: 
-      </p>
-      <p>
+      <h3>
         0.00%
+      </h3>
+      <p>
+        Per Population
       </p>
     </div>
     <div
-      className="info bar"
+      className="info show"
     >
-      <div
-        className="div-bg"
-      />
-      <p>
-        New Confirmed: 
-      </p>
-      <p>
+      <h3>
         87
+      </h3>
+      <p>
+        New Confirmed
       </p>
     </div>
     <div
-      className="info bar"
+      className="info show"
     >
-      <div
-        className="div-bg"
-      />
-      <p>
-        Per Population: 
-      </p>
-      <p>
+      <h3>
         0.00%
+      </h3>
+      <p>
+        Per Population
       </p>
     </div>
   </div>
@@ -110,17 +86,14 @@ exports[`renders correctly 1`] = `
     >
       <div
         className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
       />
       <a
         href="#/continent/Africa/AF"
         onClick={[Function]}
       >
-        Africa
+        <h2>
+          Africa
+        </h2>
       </a>
     </div>
     <div
@@ -128,35 +101,14 @@ exports[`renders correctly 1`] = `
     >
       <div
         className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
-      />
-      <a
-        href="#/continent/Antarctica/AN"
-        onClick={[Function]}
-      >
-        Antarctica
-      </a>
-    </div>
-    <div
-      className="continent tab"
-    >
-      <div
-        className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
       />
       <a
         href="#/continent/Asia/AS"
         onClick={[Function]}
       >
-        Asia
+        <h2>
+          Asia
+        </h2>
       </a>
     </div>
     <div
@@ -164,17 +116,14 @@ exports[`renders correctly 1`] = `
     >
       <div
         className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
       />
       <a
         href="#/continent/Europe/EU"
         onClick={[Function]}
       >
-        Europe
+        <h2>
+          Europe
+        </h2>
       </a>
     </div>
     <div
@@ -182,17 +131,14 @@ exports[`renders correctly 1`] = `
     >
       <div
         className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
       />
       <a
         href="#/continent/North America/NA"
         onClick={[Function]}
       >
-        North America
+        <h2>
+          North America
+        </h2>
       </a>
     </div>
     <div
@@ -200,17 +146,14 @@ exports[`renders correctly 1`] = `
     >
       <div
         className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
       />
       <a
         href="#/continent/Oceania/OC"
         onClick={[Function]}
       >
-        Oceania
+        <h2>
+          Oceania
+        </h2>
       </a>
     </div>
     <div
@@ -218,17 +161,14 @@ exports[`renders correctly 1`] = `
     >
       <div
         className="div-bg"
-        style={
-          Object {
-            "opacity": "0.25",
-          }
-        }
       />
       <a
         href="#/continent/South America/SA"
         onClick={[Function]}
       >
-        South America
+        <h2>
+          South America
+        </h2>
       </a>
     </div>
   </div>

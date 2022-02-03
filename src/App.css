@@ -12,8 +12,19 @@ header {
 
 header button {
   margin: 1rem;
+  cursor: pointer;
   background: transparent;
   color: var(--font-color);
   border: none;
   font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--title-font);
 }
