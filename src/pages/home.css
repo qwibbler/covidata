@@ -38,7 +38,7 @@
 .continent.tab {
   z-index: 100;
   height: calc((100vh - 430px) / 3);
-  min-height: max-content;
+  min-height: 6rem;
 }
 
 .div-bg {

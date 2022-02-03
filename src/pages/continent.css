@@ -1,3 +1,12 @@
+.heading {
+  position: relative;
+  padding: 1.2rem;
+}
+
+.div-bg.light {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .country.tab {
   min-height: 140px;
   justify-content: space-between;
@@ -19,4 +28,26 @@
 .info.block p {
   font-size: 10px;
   margin-top: 0;
+}
+
+.search-bar {
+  display: flex;
+  width: 70vw;
+  margin: auto;
+}
+
+.search {
+  border: 2px solid var(--font-color);
+  background-color: rgba(0, 255, 8, 0.2);
+}
+
+.input {
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  padding: 0.2rem 0.5rem;
+  flex-grow: 1;
+}
+
+.btn {
+  border-radius: 0 5px 5px 0;
 }

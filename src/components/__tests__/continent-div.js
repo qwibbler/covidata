@@ -7,7 +7,6 @@ it('renders correctly', () => {
   const component = renderer.create(
     <Router>
       <ContinentDiv country={{ name: 'Pakistan', href: 'http://PK/' }} population={100} confirmed={9} />
-      ,
     </Router>,
   );
   const tree = component.toJSON();

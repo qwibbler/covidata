@@ -6,6 +6,8 @@ export const LOAD_DATA = 'api/data/LOAD';
 export const FETCHED_DATA = 'api/data/FETCHED';
 export const FETCHED_COUNTRIES = 'api/countries/FETCHED';
 export const FETCHED_POP = 'api/pop/FETCHED';
+export const FILTER = 'countries/FILTER';
+export const DATING = 'data/DATING';
 
 export const covidUrl = 'https://api.covid19tracking.narrativa.com/api/';
 export const countriesUrl = 'https://api.teleport.org/api/continents/';
@@ -16,6 +18,8 @@ export const randOpacity = () => ({ opacity: (Math.random() * 0.3 + 0.2).toStrin
 export const dataAction = (data, date) => ({ type: FETCHED_DATA, data, date });
 export const errorAction = (error) => ({ type: ERROR, error });
 export const countryAction = (data) => ({ type: FETCHED_COUNTRIES, data });
+export const filterAction = (filter) => ({ type: FILTER, filter });
+export const datingAction = () => ({ type: DATING });
 
 const myHeaders = new Headers();
 const requestOptions = {
@@ -43,8 +47,10 @@ export const initialState = {
   date: '',
   countries: [],
   population: {},
+  filter: '',
   loading: false,
   error: '',
+  changeDate: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -78,6 +84,18 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.error,
+      };
+    }
+    case FILTER: {
+      return {
+        ...state,
+        filter: action.filter,
+      };
+    }
+    case DATING: {
+      return {
+        ...state,
+        changeDate: !state.changeDate,
       };
     }
     default:

@@ -1,8 +1,9 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchCountries } from '../redux/home/home';
+import { fetchCountries, filterAction } from '../redux/home/home';
 import { corresponding, pop } from '../redux/home/staticData';
+import InputSearch from '../components/input-search';
 import ContinentDiv from '../components/continent-div';
 import './continent.css';
 
@@ -15,17 +16,23 @@ const Continent = () => {
     dispatch(fetchCountries(href));
   }, []);
 
+  const filterStr = useSelector((state) => state.home.filter);
   const countries = useSelector((state) => state.home.countries);
   const data = useSelector((state) => state.home.data);
   const countriesFiltered = countries
     .map((country) => (corresponding[country.name]
       ? { ...country, name: corresponding[country.name] }
       : { ...country }))
-    .filter((country) => data[country.name]);
+    .filter((country) => data[country.name])
+    .filter((country) => country.name.toUpperCase().indexOf(filterStr.toUpperCase()) > -1);
 
   return (
     <section className="countries">
-      <h1>{continent}</h1>
+      <div className="heading">
+        <div className="div-bg light" />
+        <h1>{continent}</h1>
+        <InputSearch placeholder="Search by country" name="filter-input" value={filterStr} action={filterAction} />
+      </div>
       <div className="countries tabs">
         {countriesFiltered.map((country) => (
           <ContinentDiv

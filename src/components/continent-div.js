@@ -6,7 +6,7 @@ const ContinentDiv = (props) => {
   const { country, population, confirmed } = props;
   const { continent, code } = useParams();
   const percent = confirmed / population;
-  const densityOpacity = () => ({ opacity: percent * 2 + 0.2 });
+  const densityOpacity = () => ({ opacity: percent * 2 });
   return (
     <Link
       to={`/continent/${continent}/${code}/${
