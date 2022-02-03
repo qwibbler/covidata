@@ -28,8 +28,11 @@ const Continent = () => {
 
   return (
     <section className="countries">
-      <h1>{continent}</h1>
-      <InputSearch placeholder="Search by country" name="filter-input" value={filterStr} action={filterAction} />
+      <div className="heading">
+        <div className="div-bg light" />
+        <h1>{continent}</h1>
+        <InputSearch placeholder="Search by country" name="filter-input" value={filterStr} action={filterAction} />
+      </div>
       <div className="countries tabs">
         {countriesFiltered.map((country) => (
           <ContinentDiv
