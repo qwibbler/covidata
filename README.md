@@ -17,6 +17,7 @@ Additional description about the project and its features.
 ## Live Demo
 
 [Live Demo Link](https://qwibbler-covidata.netlify.app/)
+[Video Introduction](https://www.loom.com/share/d40f5367c7ef48048fb699073566f354)
 
 
 ## Getting Started
@@ -41,6 +42,7 @@ NodeJS
 
 - Find the country whose stats you are interested in.
 - Discover all of the country's current stats, as well as their stats by population.
+- To change the date of the data, click the 'edit pencil' in the top right corner, or double click the date.
 
 ### Run tests
 
@@ -49,8 +51,6 @@ NodeJS
 ### Deployment
 
 - Deployed at [Netlify](https://qwibbler-covidata.netlify.app/)
-
-
 
 ## Authors
 
@@ -73,7 +73,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Design idea by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on [Behance](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
-- Image by rawpixel.com vexels.com
+- Virus Image by rawpixel.com vexels.com
 
 ## 📝 License
 
