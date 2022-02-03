@@ -15,3 +15,7 @@
   opacity: 0.2;
   animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
 }
+
+.bar:hover > .div-bg {
+  opacity: 0.5 !important;
+}

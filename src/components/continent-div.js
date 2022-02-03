@@ -9,25 +9,23 @@ const ContinentDiv = (props) => {
   const densityOpacity = () => ({ opacity: percent * 2 });
   return (
     <Link
-      to={`/continent/${continent}/${code}/${
-        country.name
-      }/${country.href.slice(-3)}`}
-      className="tab"
+      to={`/continent/${continent}/${code}/${country.name}/${country.href.slice(
+        -3,
+      )}`}
+      className="country tab"
     >
-      <div className="country tab">
-        <div className="div-bg" style={densityOpacity()} />
-        <h2>{country.name}</h2>
-        <div className="info block">
-          <h3>{population}</h3>
-          <p>Population</p>
-          <h3>{confirmed}</h3>
-          <p>Confirmed</p>
-          <h3>
-            {percent.toFixed(2)}
-            %
-          </h3>
-          <p>Percent</p>
-        </div>
+      <div className="div-bg" style={densityOpacity()} />
+      <h2>{country.name}</h2>
+      <div className="info block">
+        <h3>{population}</h3>
+        <p>Population</p>
+        <h3>{confirmed}</h3>
+        <p>Confirmed</p>
+        <h3>
+          {percent.toFixed(2)}
+          %
+        </h3>
+        <p>Percent</p>
       </div>
     </Link>
   );

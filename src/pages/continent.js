@@ -16,6 +16,7 @@ const Continent = () => {
     dispatch(fetchCountries(href));
   }, []);
 
+  // const loading = useSelector((state) => state.home.loading);
   const filterStr = useSelector((state) => state.home.filter);
   const countries = useSelector((state) => state.home.countries);
   const data = useSelector((state) => state.home.data);

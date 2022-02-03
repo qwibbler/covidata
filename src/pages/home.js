@@ -51,12 +51,14 @@ const Home = (props) => {
       </div>
       <div className="home tabs">
         {continentsList.map((continent) => (
-          <div className="continent tab" key={continent.name}>
+          <Link
+            to={`/continent/${continent.name}/${continent.code}`}
+            className="continent tab"
+            key={continent.name}
+          >
             <div className="div-bg" style={randOpacity()} />
-            <Link to={`/continent/${continent.name}/${continent.code}`}>
-              <h2>{continent.name}</h2>
-            </Link>
-          </div>
+            <h2>{continent.name}</h2>
+          </Link>
         ))}
       </div>
     </section>

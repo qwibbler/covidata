@@ -52,7 +52,7 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.tab:hover > .div-bg {
+.div-bg:hover {
   opacity: 0.5 !important;
 }
 
