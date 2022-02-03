@@ -27,6 +27,6 @@ InputSearch.propTypes = {
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  action: PropTypes.objectOf(PropTypes.string).isRequired,
+  action: PropTypes.func.isRequired,
 };
 export default InputSearch;

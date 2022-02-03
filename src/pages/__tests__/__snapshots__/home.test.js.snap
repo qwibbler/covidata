@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   className="home"
 >
   <div
-    className="world"
+    className="world spin-b4"
   >
     <div
       className="info show"
@@ -81,96 +81,78 @@ exports[`renders correctly 1`] = `
   <div
     className="home tabs"
   >
-    <div
+    <a
       className="continent tab"
+      href="#/continent/Africa/AF"
+      onClick={[Function]}
     >
       <div
         className="div-bg"
       />
-      <a
-        href="#/continent/Africa/AF"
-        onClick={[Function]}
-      >
-        <h2>
-          Africa
-        </h2>
-      </a>
-    </div>
-    <div
+      <h2>
+        Africa
+      </h2>
+    </a>
+    <a
       className="continent tab"
+      href="#/continent/Asia/AS"
+      onClick={[Function]}
     >
       <div
         className="div-bg"
       />
-      <a
-        href="#/continent/Asia/AS"
-        onClick={[Function]}
-      >
-        <h2>
-          Asia
-        </h2>
-      </a>
-    </div>
-    <div
+      <h2>
+        Asia
+      </h2>
+    </a>
+    <a
       className="continent tab"
+      href="#/continent/Europe/EU"
+      onClick={[Function]}
     >
       <div
         className="div-bg"
       />
-      <a
-        href="#/continent/Europe/EU"
-        onClick={[Function]}
-      >
-        <h2>
-          Europe
-        </h2>
-      </a>
-    </div>
-    <div
+      <h2>
+        Europe
+      </h2>
+    </a>
+    <a
       className="continent tab"
+      href="#/continent/North America/NA"
+      onClick={[Function]}
     >
       <div
         className="div-bg"
       />
-      <a
-        href="#/continent/North America/NA"
-        onClick={[Function]}
-      >
-        <h2>
-          North America
-        </h2>
-      </a>
-    </div>
-    <div
+      <h2>
+        North America
+      </h2>
+    </a>
+    <a
       className="continent tab"
+      href="#/continent/Oceania/OC"
+      onClick={[Function]}
     >
       <div
         className="div-bg"
       />
-      <a
-        href="#/continent/Oceania/OC"
-        onClick={[Function]}
-      >
-        <h2>
-          Oceania
-        </h2>
-      </a>
-    </div>
-    <div
+      <h2>
+        Oceania
+      </h2>
+    </a>
+    <a
       className="continent tab"
+      href="#/continent/South America/SA"
+      onClick={[Function]}
     >
       <div
         className="div-bg"
       />
-      <a
-        href="#/continent/South America/SA"
-        onClick={[Function]}
-      >
-        <h2>
-          South America
-        </h2>
-      </a>
-    </div>
+      <h2>
+        South America
+      </h2>
+    </a>
   </div>
 </section>
 `;

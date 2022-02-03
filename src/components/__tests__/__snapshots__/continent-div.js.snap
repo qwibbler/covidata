@@ -2,47 +2,43 @@
 
 exports[`renders correctly 1`] = `
 <a
-  className=" tab"
+  className="country tab"
   href="#/continent/undefined/undefined/Pakistan/PK/"
   onClick={[Function]}
 >
   <div
-    className="country tab"
-  >
-    <div
-      className="div-bg"
-      style={
-        Object {
-          "opacity": 0.38,
-        }
+    className="div-bg"
+    style={
+      Object {
+        "opacity": 0.18,
       }
-    />
-    <h2>
-      Pakistan
-    </h2>
-    <div
-      className="info block"
-    >
-      <h3>
-        100
-      </h3>
-      <p>
-        Population
-      </p>
-      <h3>
-        9
-      </h3>
-      <p>
-        Confirmed
-      </p>
-      <h3>
-        0.09
-        %
-      </h3>
-      <p>
-        Percent
-      </p>
-    </div>
+    }
+  />
+  <h2>
+    Pakistan
+  </h2>
+  <div
+    className="info block"
+  >
+    <h3>
+      100
+    </h3>
+    <p>
+      Population
+    </p>
+    <h3>
+      9
+    </h3>
+    <p>
+      Confirmed
+    </p>
+    <h3>
+      0.09
+      %
+    </h3>
+    <p>
+      Percent
+    </p>
   </div>
 </a>
 `;

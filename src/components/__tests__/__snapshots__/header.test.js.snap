@@ -6,13 +6,18 @@ exports[`renders correctly 1`] = `
     onClick={[Function]}
     type="button"
   >
-    &lt;
+    ⧀
   </button>
-  2022-02-03
+  <p
+    onDoubleClick={[Function]}
+  >
+    2020-09-09
+  </p>
   <button
+    onClick={[Function]}
     type="button"
   >
-    ⚙
+    🖉
   </button>
 </header>
 `;
