@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { datingAction, fetchData, now } from '../redux/home/home';
+import { datingAction, fetchData, yesterday } from '../redux/home/home';
 import './header.css';
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
             onChange={changeHandler}
             onSubmit={toggleEdit}
             min="2020-01-23"
-            max={now}
+            max={yesterday}
           />
           <button className="search btn" type="button" onClick={toggleEdit}>
             ✔
