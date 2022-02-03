@@ -1,6 +1,7 @@
 .world {
   padding: 1rem;
   text-align: right;
+  min-height: 385px;
   background:
     url(../../public/covid-logo.png),
     linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(16, 146, 1, 1) 100%);
@@ -31,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 50vw;
+  width: 40vw;
   flex-grow: 1;
 }
 
@@ -51,6 +52,14 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.tab:hover > .div-bg {
+.div-bg:hover {
   opacity: 0.5 !important;
+}
+
+.continent.tab:nth-child(2n+1) {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
+}
+
+.continent.tab:nth-child(2n) {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both;
 }

@@ -4,12 +4,20 @@
   justify-content: space-between;
   padding: 0 2rem;
   width: 100vw;
+  min-height: 51.2px;
+  height: calc((100vh - 164px) / 12);
+}
+
+.bar:hover > .div-bg {
+  opacity: 0.5 !important;
 }
 
 .details .bar:nth-child(even) .div-bg {
   opacity: 0.3;
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both;
 }
 
 .details .bar:nth-child(odd) .div-bg {
   opacity: 0.2;
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
 }

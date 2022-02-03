@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header>
       <button type="button" onClick={() => navigate(-1)}>
-        &#60;
+        ⧀
       </button>
       {changeDate ? (
         <div className="date-inputs">
@@ -36,14 +36,14 @@ const Header = () => {
             max={now}
           />
           <button className="search btn" type="button" onClick={toggleEdit}>
-            &#10003;
+            ✔
           </button>
         </div>
       ) : (
         <p onDoubleClick={toggleEdit}>{date}</p>
       )}
       <button type="button" onClick={toggleEdit}>
-        &#9881;
+        🖉
       </button>
     </header>
   );

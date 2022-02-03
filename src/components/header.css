@@ -12,6 +12,7 @@ header button {
   background: transparent;
   color: var(--font-color);
   border: none;
+  font-size: 20px;
   font-weight: bold;
 }
 
