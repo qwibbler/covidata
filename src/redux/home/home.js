@@ -12,7 +12,7 @@ export const DATING = 'data/DATING';
 export const covidUrl = 'https://api.covid19tracking.narrativa.com/api/';
 export const countriesUrl = 'https://api.teleport.org/api/continents/';
 export const popUrl = 'https://api.teleport.org/api/countries/iso_alpha2:';
-export const now = DateTime.now().toFormat('yyyy-MM-dd');
+export const now = DateTime.now().minus({ days: 1 }).toFormat('yyyy-MM-dd');
 export const randOpacity = () => ({ opacity: (Math.random() * 0.3 + 0.2).toString() });
 
 export const dataAction = (data, date) => ({ type: FETCHED_DATA, data, date });
