@@ -19,11 +19,15 @@
   min-height: 140px;
   justify-content: space-between;
   align-items: flex-start;
+  text-align: left;
   padding: 1rem;
 }
 
+.country.tab h2 {
+  margin: 0;
+}
+
 .info.block {
-  /* margin-right: 1rem; */
   text-align: right;
 }
 

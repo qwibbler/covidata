@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 50vw;
+  width: 50vw;
   flex-grow: 1;
 }
 
