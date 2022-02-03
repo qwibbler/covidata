@@ -4,7 +4,7 @@
 
 > A website showing all Covid19 related statistics per country.
 
-![screenshot](./public/screenshot.png)
+![screenshot](./covidata-screen-gif.gif)
 
 Additional description about the project and its features.
 
@@ -74,6 +74,7 @@ Give a ⭐️ if you like this project!
 
 - Design idea by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on [Behance](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
 - Virus Image by rawpixel.com vexels.com
+- Gif made by https://www.freeconvert.com/crop-video
 
 ## 📝 License
 
