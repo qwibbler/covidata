@@ -1,6 +1,7 @@
 .world {
   padding: 1rem;
   text-align: right;
+  min-height: 385px;
   background:
     url(../../public/covid-logo.png),
     linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(16, 146, 1, 1) 100%);
