@@ -14,9 +14,10 @@ const store = mockStore({
       { name: 'Pakistan', href: 'http://PK/' },
     ],
     data: {
-      US: {},
-      Pakistan: {},
+      US: { today_confirmed: 9 },
+      Pakistan: { today_confirmed: 7 },
     },
+    filter: 'ki',
   },
 });
 

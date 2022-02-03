@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchCountries, filterAction } from '../redux/home/home';
 import { corresponding, pop } from '../redux/home/staticData';
+import InputSearch from '../components/input-search';
 import ContinentDiv from '../components/continent-div';
 import './continent.css';
 
@@ -28,19 +29,7 @@ const Continent = () => {
   return (
     <section className="countries">
       <h1>{continent}</h1>
-      <div className="search-bar">
-        <input
-          type="text"
-          className="search input"
-          placeholder="Search by country"
-          name="filter-input"
-          value={filterStr}
-          onChange={(e) => dispatch(filterAction(e.target.value))}
-        />
-        <button type="button" className="search btn">
-          &#128269;
-        </button>
-      </div>
+      <InputSearch placeholder="Search by country" name="filter-input" value={filterStr} action={filterAction} />
       <div className="countries tabs">
         {countriesFiltered.map((country) => (
           <ContinentDiv
