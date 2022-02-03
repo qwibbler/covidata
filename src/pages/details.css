@@ -8,8 +8,10 @@
 
 .details .bar:nth-child(even) .div-bg {
   opacity: 0.3;
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-left both;
 }
 
 .details .bar:nth-child(odd) .div-bg {
   opacity: 0.2;
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
 }

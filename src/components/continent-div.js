@@ -12,7 +12,7 @@ const ContinentDiv = (props) => {
       to={`/continent/${continent}/${code}/${
         country.name
       }/${country.href.slice(-3)}`}
-      className=" tab"
+      className="tab"
     >
       <div className="country tab">
         <div className="div-bg" style={densityOpacity()} />
