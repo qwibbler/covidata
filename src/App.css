@@ -2,23 +2,6 @@
   text-align: center;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  height: 50px;
-}
-
-header button {
-  margin: 1rem;
-  cursor: pointer;
-  background: transparent;
-  color: var(--font-color);
-  border: none;
-  font-weight: bold;
-}
-
 a {
   text-decoration: none;
 }
