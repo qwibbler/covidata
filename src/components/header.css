@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+}
+
+header button {
+  margin: 1rem;
+  cursor: pointer;
+  background: transparent;
+  color: var(--font-color);
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* header input {
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+} */
+.date-inputs {
+  display: flex;
+}
+
+.date-inputs > * {
+  margin: 0;
+}

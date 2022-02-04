@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<a
+  className="country tab"
+  href="#/continent/undefined/undefined/Pakistan/PK/"
+  onClick={[Function]}
+>
+  <div
+    className="div-bg"
+    style={
+      Object {
+        "opacity": 0.18,
+      }
+    }
+  />
+  <h2>
+    Pakistan
+  </h2>
+  <div
+    className="info block"
+  >
+    <h3>
+      100
+    </h3>
+    <p>
+      Population
+    </p>
+    <h3>
+      9
+    </h3>
+    <p>
+      Confirmed
+    </p>
+    <h3>
+      0.09
+      %
+    </h3>
+    <p>
+      Percent
+    </p>
+  </div>
+</a>
+`;

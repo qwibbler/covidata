@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="home"
+>
+  <div
+    className="world spin-b4"
+  >
+    <div
+      className="info show"
+    >
+      <h3>
+        7,924,303,275
+      </h3>
+      <p>
+        Population
+      </p>
+    </div>
+    <div
+      className="info show"
+    >
+      <h3>
+        90
+      </h3>
+      <p>
+        Confirmed
+      </p>
+    </div>
+    <div
+      className="info show"
+    >
+      <h3>
+        0.00%
+      </h3>
+      <p>
+        Per Population
+      </p>
+    </div>
+    <div
+      className="info show"
+    >
+      <h3>
+        89
+      </h3>
+      <p>
+        Deaths
+      </p>
+    </div>
+    <div
+      className="info show"
+    >
+      <h3>
+        0.00%
+      </h3>
+      <p>
+        Per Population
+      </p>
+    </div>
+    <div
+      className="info show"
+    >
+      <h3>
+        87
+      </h3>
+      <p>
+        New Confirmed
+      </p>
+    </div>
+    <div
+      className="info show"
+    >
+      <h3>
+        0.00%
+      </h3>
+      <p>
+        Per Population
+      </p>
+    </div>
+  </div>
+  <div
+    className="home tabs"
+  >
+    <a
+      className="continent tab"
+      href="#/continent/Africa/AF"
+      onClick={[Function]}
+    >
+      <div
+        className="div-bg"
+      />
+      <h2>
+        Africa
+      </h2>
+    </a>
+    <a
+      className="continent tab"
+      href="#/continent/Asia/AS"
+      onClick={[Function]}
+    >
+      <div
+        className="div-bg"
+      />
+      <h2>
+        Asia
+      </h2>
+    </a>
+    <a
+      className="continent tab"
+      href="#/continent/Europe/EU"
+      onClick={[Function]}
+    >
+      <div
+        className="div-bg"
+      />
+      <h2>
+        Europe
+      </h2>
+    </a>
+    <a
+      className="continent tab"
+      href="#/continent/North America/NA"
+      onClick={[Function]}
+    >
+      <div
+        className="div-bg"
+      />
+      <h2>
+        North America
+      </h2>
+    </a>
+    <a
+      className="continent tab"
+      href="#/continent/Oceania/OC"
+      onClick={[Function]}
+    >
+      <div
+        className="div-bg"
+      />
+      <h2>
+        Oceania
+      </h2>
+    </a>
+    <a
+      className="continent tab"
+      href="#/continent/South America/SA"
+      onClick={[Function]}
+    >
+      <div
+        className="div-bg"
+      />
+      <h2>
+        South America
+      </h2>
+    </a>
+  </div>
+</section>
+`;

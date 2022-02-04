@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="countries"
+>
+  <div
+    className="heading"
+  >
+    <div
+      className="div-bg light"
+    />
+    <h1 />
+    <div
+      className="search-bar"
+    >
+      <input
+        className="search input"
+        name="filter-input"
+        onChange={[Function]}
+        placeholder="Search by country"
+        type="text"
+        value="ki"
+      />
+      <button
+        className="search btn"
+        type="button"
+      >
+        🔍
+      </button>
+    </div>
+  </div>
+  <div
+    className="countries tabs spin-b4"
+  >
+    <a
+      className="country tab"
+      href="#/continent/undefined/undefined/Pakistan/PK/"
+      onClick={[Function]}
+    >
+      <div
+        className="div-bg"
+        style={
+          Object {
+            "opacity": 7.591993637518886e-8,
+          }
+        }
+      />
+      <h2>
+        Pakistan
+      </h2>
+      <div
+        className="info block"
+      >
+        <h3>
+          184404791
+        </h3>
+        <p>
+          Population
+        </p>
+        <h3>
+          7
+        </h3>
+        <p>
+          Confirmed
+        </p>
+        <h3>
+          0.00
+          %
+        </h3>
+        <p>
+          Percent
+        </p>
+      </div>
+    </a>
+  </div>
+</section>
+`;

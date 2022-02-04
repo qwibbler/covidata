@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<header>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    ⧀
+  </button>
+  <p
+    onDoubleClick={[Function]}
+  >
+    2020-09-09
+  </p>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    🖉
+  </button>
+</header>
+`;
